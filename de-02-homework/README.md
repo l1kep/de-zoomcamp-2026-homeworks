@@ -11,10 +11,10 @@ docker compose up
 
 ```yml
 commands:
-	- wget -qO- https://github.com/DataTalksClub/nyc-tlc-data/releases/download/{{inputs.taxi}}/{{render(vars.file)}}.gz | gunzip > {{render(vars.file)}}
-	- ls -lh {{render(vars.file)}}
-	- file_size_bytes=$(wc -c < {{render(vars.file)}} | tr -d ' ')
-	- echo "::{\"outputs\":{\"file_size_bytes\":${file_size_bytes}}}::"
+    - wget -qO- https://github.com/DataTalksClub/nyc-tlc-data/releases/download/{{inputs.taxi}}/{{render(vars.file)}}.gz | gunzip > {{render(vars.file)}}
+    - ls -lh {{render(vars.file)}}
+    - file_size_bytes=$(wc -c < {{render(vars.file)}} | tr -d ' ')
+    - echo "::{\"outputs\":{\"file_size_bytes\":${file_size_bytes}}}::"
 ```
 You can see file size into 'file_size_bytes'
 
